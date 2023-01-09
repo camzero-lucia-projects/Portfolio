@@ -1,0 +1,42 @@
+%btn-primary{
+  @include inline-flexbox;
+
+  position: absolute;
+  width: 200px;
+  height: 48px;
+  left: 292px;
+  top: 1910px;
+}
+
+%btn-secondary{
+  @include inline-flexbox;
+  position: absolute;
+  left: 59.09%;
+  right: 0%;
+  top: 22.47%;
+  bottom: 56.39%;
+}
+
+//NOTE: Button style and state
+.btn-fill-primary {
+  @extend %btn-base;
+  @include text-style(14);
+  color: $white;
+  background: $button-color;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.4;
+  }
+}
+.btn-fill-secondary{
+  @extend %btn-base;
+  @include text-style(14);
+  color: $white;
+  background: $button-color;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.4;
+  }
+}

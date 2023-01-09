@@ -1,0 +1,14 @@
+
+/* variables.module.scss */
+$primary-color: black;
+$background-color:red;
+
+:export {
+  primaryColor: $primary-color;
+}
+
+.myComponent{
+  background-color:$background-color;
+}
+
+
