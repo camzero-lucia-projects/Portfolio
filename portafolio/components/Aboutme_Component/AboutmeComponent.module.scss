@@ -1,0 +1,64 @@
+.Box_1 {
+  display: flex;
+  position: absolute;
+  width: 1015px;
+  height: 600px;
+  top: 900px;
+  left: 165px;
+  .Box_2_Image {
+    position: absolute;
+    width: 540px;
+    height: 600px;
+    top: 0%;
+    // background-image: url('../../public/assets/portafolio.jpg');
+  }
+  .Box_2_Text {
+    position: absolute;
+    width: 350px;
+    height: 600px;
+    top: 0%;
+    left: 665px;
+    .line_Top {
+      position: absolute;
+      width: 350px;
+      height: 1px;
+      background: #33323d;
+      mix-blend-mode: normal;
+      opacity: 0.15;
+    }
+    .line_Down {
+      position: absolute;
+      width: 350px;
+      height: 1px;
+      top: 598px;
+      background: #33323d;
+      mix-blend-mode: normal;
+      opacity: 0.15;
+    }
+    .Box2_aboutMe {
+      position: absolute;
+      width: 350px;
+      height: 502px;
+      .body2_text {
+        height: 360;
+        top: 120;
+        mix-blend-mode: normal;
+        opacity: 0.8;
+      }
+      .button1_text_container {
+        width: 202px;
+        height: 48px;
+        top: 504px;
+        right: 42.29%;
+        left: 0%;
+        bottom: 0%;
+        .button1_text {
+          position: absolute;
+          height: 14px;
+          left: 32px;
+          top: calc(50% - 14px / 2);
+        }
+      }
+    }
+  }
+}
