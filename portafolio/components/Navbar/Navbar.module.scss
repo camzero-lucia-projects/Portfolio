@@ -1,0 +1,53 @@
+@import './colors.module.scss';
+@import './typography.module.scss';
+
+.Nav_container {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1111px;
+  height: 32px;
+  left: 165px;
+  top: 64px;
+  z-index: 1;
+  // transition: .3s ease-in;
+  // overflow:hidden ;
+  // background-color: #FFFFFF;
+  .logo {
+    position: absolute;
+    height: 32px;
+    width: 60.08;
+    .triangle_left {
+      background: $primary-Grayish;
+      border: transparent;
+      background: #ffffff;
+    }
+    .triangle_right {
+      position: absolute;
+      border: transparent;
+      background: #ffffff;
+    }
+  }
+  .nav_links {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    list-style: none;
+    left:741px;
+    li {
+      margin-left: 3rem;
+      a {
+        color: $primary-Grayish;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: $font-size-12;
+        font-family: $font-body;
+        &:hover {
+          color: $primary-Desaturated-Cyan;
+        }
+      }
+    }
+  }
+}
