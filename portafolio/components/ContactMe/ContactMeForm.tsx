@@ -1,10 +1,14 @@
 import React, { useContext } from 'react'
 import { useForm, ValidationError } from '@formspree/react'
 import ThankYouComponent from '../ThankYouComponent'
+import { IdxCtx, IContext } from '../../Store/context/index_context'
 
 const ContactMeFormComponent: React.FC = () => {
   const [state, handleSubmit] = useForm('xeqwegwz')
-
+  
+  const { refContactMe} = useContext(
+    IdxCtx
+  ) as IContext
 
   if (state.succeeded) {
     return <ThankYouComponent/> 
@@ -12,8 +16,8 @@ const ContactMeFormComponent: React.FC = () => {
   return (
     <>
       <div className={'lineSeparator_ctme_top'} />
-      <h1 className={'title_1'}>Get in Touch</h1>
-      <div className={'text_ctme'}>
+      <h1 className={'title_1'} >Get in Touch</h1>
+      <div className={'text_ctme'} ref={refContactMe}>
         <p className='body_2'>
           I’d love to hear about what you’re working on and how I could help.
           I’m currently looking for a new role and am open to a wide range of

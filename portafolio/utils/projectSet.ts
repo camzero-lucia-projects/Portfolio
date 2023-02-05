@@ -31,7 +31,7 @@ const projects:Project.Description[]= [
     textBackground:'The main purpose of the mobile app is to be integrated with the previous Full Stack Restaurant project.It was developed using React Native and works in both Android and Ios native platform. I decide to use React native mainly becuse I already knew how to develop using React so it was more flexible for me. At this moment is under development and in the future will be at the google store in Android and App store in IOS. The same as the previous the idea is to show the recomended dishes of the selected restaurant using a recomendation system. ',
   },
   {
-    nameProject: 'Go Minicompiler',
+    nameProject: 'Go Compiler',
     textIndex:
       'This project was develop as final project in the Compiler class at NCKU University. The main idea was to see the diferent steps that are required to build a compiler. ',
     type:'Context-Free Grammar/Parsing/Compiler',
