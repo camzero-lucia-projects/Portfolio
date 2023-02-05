@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import React, { useContext, useEffect } from 'react'
 import { IdxCtx, IContext } from '../../Store/context/index_context'
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronLeft,faChevronRight} from '@fortawesome/free-solid-svg-icons'
 
 interface IPropsSlider {
   proj_number?: string | string[] | undefined
@@ -12,17 +14,20 @@ const SliderComponent: React.FC<IPropsSlider> = ({ proj_number }) => {
   const router = useRouter()
   const lengthProjects = projects?.length
 
-  return projects && lengthProjects?(
+  return projects && lengthProjects ? (
     <div className={'Box_1_Slider'}>
       <div className={'line_separator_top'} />
 
       <div className={'box_prev'}>
-        <Link className='arrow_left' href={`${
-              Number(proj_number) === 1
-                ? lengthProjects
-                : Number(proj_number) - 1}
-          `} />
-        <div className={'box_prev_text'}>
+
+        <FontAwesomeIcon  className={'arrow_left'} icon={faChevronLeft} />
+        <Link
+          className='box_prev_text'
+          href={`${
+            Number(proj_number) === 1 ? lengthProjects : Number(proj_number) - 1
+          }
+          `}
+        >
           <div className={'title_prev'}>
             <h3>
               {Number(proj_number) === 1
@@ -33,17 +38,20 @@ const SliderComponent: React.FC<IPropsSlider> = ({ proj_number }) => {
           <div className={'sub_title'}>
             <p className='body_2 text'>Previous Project</p>
           </div>
-        </div>
+        </Link>
       </div>
+
       <div className={'line_separator_middle'} />
+
       <div className={'box_next'}>
-        <Link className='arrow_right' href={`${
-              Number(proj_number) === lengthProjects 
-                ? 1
-                : Number(proj_number) + 1}
-          `} 
-          />
-        <div className={'box_next_text'}>
+        <FontAwesomeIcon  className={'arrow_right'} icon={faChevronRight} />
+        <Link
+          className='box_next_text'
+          href={`${
+            Number(proj_number) === lengthProjects ? 1 : Number(proj_number) + 1
+          }
+          `}
+        >
           <div className={'title_prev'}>
             <h3>
               {Number(proj_number) === lengthProjects
@@ -54,11 +62,11 @@ const SliderComponent: React.FC<IPropsSlider> = ({ proj_number }) => {
           <div className={'sub_title'}>
             <p className='body_2 text'>Next Project</p>
           </div>
-        </div>
+        </Link>
       </div>
       <div className={'line_separator_down'} />
     </div>
-  ):null
+  ) : null
 }
 
 export default SliderComponent

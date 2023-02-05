@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './AboutmeComponent.module.scss'
-import homeImage from '../../public/assets/image-homepage-hero.jpg'
 import ProfileImg from '../../public/assets/portafolio.jpg'
 import { useRouter } from 'next/router'
 import Image
@@ -11,8 +10,8 @@ const AboutMeComponent: React.FC = () => {
   const router = useRouter()
 
   return (
-    <div className={styles.Box_1}>
-      <div className={styles.Box_2_Image}>
+    <div className={'Box_1_AboutImg'}>
+      <div className={'Box_2_Image'}>
           <Image
             src={ProfileImg}
             alt={'Image-Hero'}
@@ -21,12 +20,12 @@ const AboutMeComponent: React.FC = () => {
           />
 
       </div>
-      <div className={styles.Box_2_Text}>
-        <div className={styles.line_Top}></div>
-        <div className={styles.Box2_aboutMe}>
+      <div className={'Box_2_Text'}>
+        <div className={'line_Top'}></div>
+        <div className={'Box2_aboutMe'}>
           <h1>About Me</h1>
 
-          <div className={styles.body2_text}>
+          <div className={'body2_text'}>
             <p className={'body_1'}>
               I'm a Computer Science student at my senior year, I'm
               looking for new role in Software Development in an exciting
@@ -39,15 +38,15 @@ const AboutMeComponent: React.FC = () => {
             </p>
           </div>
           <button
-            className={`buttonSecondary ${styles.button1_text_container}`}
+            className={`buttonSecondary ${'button1_text_container'}`}
             onClick={()=>router.push('portafolio')}
           >
-            <div className={`textButton ${styles.button1_text}`}>
+            <div className={`textButton ${'button1_text'}`}>
               Go To Portafolio
             </div>
           </button>
         </div>
-        <div className={styles.line_Down}></div>
+        <div className={'line_Down'}></div>
       </div>
     </div>
   )

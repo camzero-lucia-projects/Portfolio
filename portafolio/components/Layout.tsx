@@ -2,15 +2,16 @@ import React from 'react'
 import Navbar from './Navbar/Navbar'
 import BottomNavbarComponent from './BottomNavbar/BottomNavbarComponent'
 import ContactMeComponent from './ContactMe/ContactMeComponent'
+
 interface IProps {
   children?: React.ReactNode
-  pg?: string
+  pg: string
 }
 
 const LayoutComponent: React.FC<IProps> = ({ children, pg }) => {
   return (
     <>
-      <Navbar />
+      <Navbar pg={pg}/>
       {children}
       {pg !== 'pg4'  ? (
         <>

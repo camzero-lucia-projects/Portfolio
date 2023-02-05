@@ -50,7 +50,8 @@ const ProjectComponentDetail: React.FC<IProps> = ({ proj_number }) => {
     ImgPrev2: Img4_Prev2,
   }
 
-  const { projects } = useContext(IdxCtx) as IContext
+  const { projects ,refProjects} = useContext(IdxCtx) as IContext
+
   const imageArr = [proj_1_Img, proj_2_Img, proj_3_Img, proj_4_Img]
   const URLGithub = ['https://github.com/camzero94/CHATBOT-LINE_RESTAURANT','https://github.com/camzero94/Restaurant_FullStack','https://github.com/camzero94/Restaurant-App-ReactNative','https://github.com/camzero94/COMPILER_2022']
 
@@ -71,7 +72,7 @@ const ProjectComponentDetail: React.FC<IProps> = ({ proj_number }) => {
       </div>
       <div className={`Box2_project`}>
         <div className={'line_separator'} />
-        <div className={`Box2_text_project`}>
+        <div className={`Box2_text_project` } ref={refProjects}>
           <div className={`title`}>
             <h2>{
               projects[Number(proj_number) - 1]?.nameProject

@@ -7,6 +7,7 @@ import ImageProject3 from '../../public/assets/ProjectApp_index.png'
 
 import ImageProject4 from '../../public/assets/Project1_index.png'
 import { useRouter } from 'next/router'
+import { IdxCtx, IContext } from '../../Store/context/index_context'
 
 interface IProps {
   project: Project.Description
@@ -15,10 +16,11 @@ interface IProps {
 
 const ProjectComponent: React.FC<IProps> = ({ number, project }) => {
   const imageArr = [ImageProject1, ImageProject2, ImageProject3, ImageProject4]
+  const { refPortafolio} = useContext(IdxCtx) as IContext
   const router = useRouter()
   //Even Left
   return number % 2 === 0 ? (
-    <div className={`Box1_Project_left project_${number}`}>
+    <div className={`Box1_Project_left project_${number}`} >
       <div className={'Box2_img'}>
         <Image
           src={imageArr[number]}
@@ -27,7 +29,7 @@ const ProjectComponent: React.FC<IProps> = ({ number, project }) => {
           objectFit='contain'
         />
       </div>
-      <div className={'Box2_container_text'}>
+      <div className={'Box2_container_text'}  ref={refPortafolio}>
         <div className={'line_separator_top'} />
         <div className={'Box2_text'}>
           <h2>{project.nameProject}</h2>
@@ -46,7 +48,7 @@ const ProjectComponent: React.FC<IProps> = ({ number, project }) => {
     </div>
   ) : (
     //Odd Right
-    <div className={`Box1_Project_right project_${number}`}>
+    <div className={`Box1_Project_right project_${number}`} >
       <div className={'Box2_img'}>
         <Image
           src={imageArr[number]}

@@ -1,28 +1,28 @@
-import React, { useRef } from 'react'
+import React, { useRef ,useContext} from 'react'
 import styles from '../Aboutme_Component/AboutmeComponent.module.scss'
 import styles2 from './Aboutme.module.scss'
 import ProfileImg from '../../public/assets/portafolio.jpg'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
+import { IdxCtx, IContext } from '../../Store/context/index_context'
+
 
 const AboutMe: React.FC = () => {
 
-  const ref = useRef<HTMLDivElement>(null)
-
+  const {refAbout} = useContext(IdxCtx) as IContext
   const router = useRouter()
 
   const handleClick =()=>{
-    ref.current?.scrollIntoView({behavior:'smooth'})
+    refAbout?.current?.scrollIntoView({behavior:'smooth'})
     }
-
   return (
     <>
-      <div className={styles2.Box_1}>
-        <div className={styles2.Box_2}>
-          <h1 style={{ textAlign: 'center' }}>
-            Hi Im Camilo Im a Computer Scientist and a Full Stack Developer.
+      <div className={'Box_1_About '}>
+        <div className={'Box_2_About '}>
+          <h1 className={'text_title textBox'}>
+            Hi Im Camilo Im a Computer Scientist.
           </h1>
-          <button className={'buttonPrimary'} onClick={handleClick}>
+          <button className={'buttonPrimary buttonAbout'} onClick={handleClick}>
             <div className='arrow-container'>
               <div className='arrow-img'></div>
             </div>
@@ -31,8 +31,8 @@ const AboutMe: React.FC = () => {
         </div>
       </div>
 
-      <div className={styles.Box_1} ref={ref}>
-        <div className={styles.Box_2_Image}>
+      <div className={'Box_1_AboutImg'} ref={refAbout}>
+        <div className={'Box_2_Image '}>
           <Image
             src={ProfileImg}
             alt={'Image-Profile'}
@@ -40,12 +40,12 @@ const AboutMe: React.FC = () => {
             fill={true}
           />
         </div>
-        <div className={styles.Box_2_Text}>
-          <div className={styles.line_Top}></div>
-          <div className={styles.Box2_aboutMe}>
+        <div className={'Box_2_Text'}>
+          <div className={'line_Top'}/>
+          <div className={'Box2_aboutMe'}>
             <h1>About Me</h1>
 
-            <div className={styles.body2_text}>
+            <div className={'body2_text'}>
               <p className={'body_1'}>
                 I'm a Computer Science student at my senior year, I'm looking
                 for new role in Software Development in an exciting company. I
@@ -59,15 +59,15 @@ const AboutMe: React.FC = () => {
               </p>
             </div>
             <button
-              className={`buttonSecondary ${styles.button1_text_container}`}
+              className={`buttonSecondary ${'button1_text_container'}`}
               onClick={() => router.push('portafolio')}
             >
-              <div className={`textButton ${styles.button1_text}`}>
+              <div className={`textButton ${'button1_text'}`}>
                 Go To Portafolio
               </div>
             </button>
           </div>
-          <div className={styles.line_Down}></div>
+          <div className={'line_Down'}></div>
         </div>
       </div>
     </>
